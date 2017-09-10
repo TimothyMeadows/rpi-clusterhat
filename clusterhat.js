@@ -1,4 +1,4 @@
-var gpio = require('rpio');
+var Proc = require('child_process');
 
 var ClusterHat;
 module.exports = ClusterHat = function () {
@@ -91,8 +91,10 @@ module.exports = ClusterHat = function () {
     };
 
     var gpio_write = function (pin, value) {
-        gpio.open(pin, value);
-        gpio.write(pin, value);
-        gpio.close(pin);
+        var proc = Proc.exec(`gpio write ${pin} ${value}`, (err, stdout, stderr) => {
+            if (err) {
+                throw err;
+            }
+        });
     };
 };

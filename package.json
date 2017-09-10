@@ -17,6 +17,5 @@
   },
   "homepage": "https://github.com/TimothyMeadows/rpi-clusterhat#readme",
   "dependencies": {
-    "rpio": "^0.9.17"
   }
 }
