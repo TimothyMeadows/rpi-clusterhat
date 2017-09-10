@@ -1,0 +1,22 @@
+{
+  "name": "rpi-clusterhat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "clusterhat.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimothyMeadows/rpi-clusterhat.git"
+  },
+  "author": "Timothy D Meadows II",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TimothyMeadows/rpi-clusterhat/issues"
+  },
+  "homepage": "https://github.com/TimothyMeadows/rpi-clusterhat#readme",
+  "dependencies": {
+    "rpi-gpio": "^0.8.1"
+  }
+}
