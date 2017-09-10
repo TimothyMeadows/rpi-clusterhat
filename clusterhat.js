@@ -26,24 +26,28 @@ module.exports = ClusterHat = function () {
                 gpio_write(gpio_pin_p1, 1);
                 setTimeout(function () {
                     gpio_busy = false;
+                    gpio_write(gpio_pin_led, 0);
                 }, 2000);
                 break;
             case p2:
                 gpio_write(gpio_pin_p2, 1);
                 setTimeout(function () {
                     gpio_busy = false;
+                    gpio_write(gpio_pin_led, 0);
                 }, 2000);
                 break;
             case p3:
                 gpio_write(gpio_pin_p3, 1);
                 setTimeout(function () {
                     gpio_busy = false;
+                    gpio_write(gpio_pin_led, 0);
                 }, 2000);
                 break;
             case p4:
                 gpio_write(gpio_pin_p4, 1);
                 setTimeout(function () {
                     gpio_busy = false;
+                    gpio_write(gpio_pin_led, 0);
                 }, 2000);
                 break;
             case all:
@@ -88,6 +92,8 @@ module.exports = ClusterHat = function () {
                 off(p4);
                 break;
         }
+
+        gpio_write(gpio_pin_led, 0);
     };
 
     var gpio_write = function (pin, value) {
