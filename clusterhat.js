@@ -15,39 +15,46 @@ module.exports = ClusterHat = function () {
     var p4 = this.p4 = "p4";
     var all = this.all = "all";
 
+    var led = this.led = function(state) {
+        if (state === true)
+            gpio_write(gpio_pin_led, 1);
+        else
+            gpio_write(gpio_pin_led, 0);
+    }
+
     var on = this.on = function (pi) {
         if (gpio_busy)
             return;
 
-        gpio_write(gpio_pin_led, 1);
+        led(true);
         gpio_busy = true;
         switch (pi) {
             case p1:
                 gpio_write(gpio_pin_p1, 1);
                 setTimeout(function () {
                     gpio_busy = false;
-                    gpio_write(gpio_pin_led, 0);
+                    led(false);
                 }, 2000);
                 break;
             case p2:
                 gpio_write(gpio_pin_p2, 1);
                 setTimeout(function () {
                     gpio_busy = false;
-                    gpio_write(gpio_pin_led, 0);
+                    led(false);
                 }, 2000);
                 break;
             case p3:
                 gpio_write(gpio_pin_p3, 1);
                 setTimeout(function () {
                     gpio_busy = false;
-                    gpio_write(gpio_pin_led, 0);
+                    led(false);
                 }, 2000);
                 break;
             case p4:
                 gpio_write(gpio_pin_p4, 1);
                 setTimeout(function () {
                     gpio_busy = false;
-                    gpio_write(gpio_pin_led, 0);
+                    led(false);
                 }, 2000);
                 break;
             case all:
@@ -71,7 +78,7 @@ module.exports = ClusterHat = function () {
     };
 
     var off = this.off = function (pi) {
-        gpio_write(gpio_pin_led, 1);
+        led(true);
         switch (pi) {
             case p1:
                 gpio_write(gpio_pin_p1, 0);
@@ -93,7 +100,7 @@ module.exports = ClusterHat = function () {
                 break;
         }
 
-        gpio_write(gpio_pin_led, 0);
+        led(false);
     };
 
     var gpio_write = function (pin, value) {

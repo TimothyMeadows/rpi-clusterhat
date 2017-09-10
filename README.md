@@ -1,6 +1,6 @@
 # rpi-clusterhat for node.js
 
-This library was desgined for usage with the [clusterhat](https://clusterhat.com/). It is a reflection of clusterhat.sh provided by the vendor but in pure node.js directly using gpio pins. This library is not affiliated in anyway with the vendor of the clusterhat.
+This library was desgined for usage with the [clusterhat](https://clusterhat.com/). It is a reflection of clusterhat.sh provided by the vendor but in node.js using gpio pins via gpio-utils (for compatability between pi versions). This library is not affiliated in anyway with the vendor of the clusterhat.
 
 # properties
 * p1 - Represents PI 1 as a string "p1".
@@ -10,8 +10,22 @@ This library was desgined for usage with the [clusterhat](https://clusterhat.com
 * [all](#all) - Represents all pi's as a string "all".
 
 # methods
+* [led](#led) - Turn on, or off the clusterhat alert LED.
 * [on](#on) - Turn on a pi zero.
 * [off](#off) - Turn off a pi zero.
+
+<a name="led"></a>
+# led
+This method will turn on, or off the clusterhat alert LED (the blue one)
+
+```javascript
+var ClusterHat = require('clusterhat'), clusterhat = new ClusterHat();
+
+clusterhat.led(true);
+setTimeout(function() { 
+    clusterhat.led(false); 
+}, 1000);
+```
 
 <a name="on"></a>
 # on
