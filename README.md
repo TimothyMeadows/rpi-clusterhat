@@ -1,6 +1,6 @@
 # rpi-clusterhat for node.js
 
-This library was desgined for usage with the [clusterhat](https://clusterhat.com/). It is a reflection of clusterhat.sh provided by the vendor but in pure node.js directly using gpio pins.
+This library was desgined for usage with the [clusterhat](https://clusterhat.com/). It is a reflection of clusterhat.sh provided by the vendor but in pure node.js directly using gpio pins. This library is not affiliated in anyway with the vendor of the clusterhat.
 
 # properties
 * p1 - Represents PI 1 as a string "p1".
