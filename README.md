@@ -17,7 +17,7 @@ This library was desgined for usage with the [clusterhat](https://clusterhat.com
 # on
 This method will turn on a pi zero.
 
-Note: There is a 2000 (2 second) delay between turning pi's on. This is to prevent an excessive spike of power when to many pi's are turned on at once. This time was taken from clusterhat.sh.
+Note: There is a 2000ms (2 second) delay between turning pi's on. This is to prevent an excessive spike of power when to many pi's are turned on at once. This time was taken from clusterhat.sh.
 
 ```javascript
 var ClusterHat = require('clusterhat'), clusterhat = new ClusterHat();
@@ -41,7 +41,7 @@ clusterhat.off(clusterhat.p1);
 # all
 This is not a method but an example of using the all property rather than specifying 1 pi zero at a time.
 
-Note: There is a 2000 (2 second) delay between turning all pi's on. There is however no delay when turning all pi's off.
+Note: There is a 2000ms (2 second) delay between turning all pi's on. There is however no delay when turning all pi's off.
 
 ```javascript
 var ClusterHat = require('clusterhat'), clusterhat = new ClusterHat();
