@@ -19,29 +19,29 @@ module.exports = ClusterHat = function () {
         if (gpio_busy)
             return;
 
-        gpio_write(gpio_pin_led, gpio.HIGH);
+        gpio_write(gpio_pin_led, 1);
         gpio_busy = true;
         switch (pi) {
             case p1:
-                gpio_write(gpio_pin_p1, gpio.HIGH);
+                gpio_write(gpio_pin_p1, 1);
                 setTimeout(function () {
                     gpio_busy = false;
                 }, 2000);
                 break;
             case p2:
-                gpio_write(gpio_pin_p2, gpio.HIGH);
+                gpio_write(gpio_pin_p2, 1);
                 setTimeout(function () {
                     gpio_busy = false;
                 }, 2000);
                 break;
             case p3:
-                gpio_write(gpio_pin_p3, gpio.HIGH);
+                gpio_write(gpio_pin_p3, 1);
                 setTimeout(function () {
                     gpio_busy = false;
                 }, 2000);
                 break;
             case p4:
-                gpio_write(gpio_pin_p4, gpio.HIGH);
+                gpio_write(gpio_pin_p4, 1);
                 setTimeout(function () {
                     gpio_busy = false;
                 }, 2000);
@@ -67,19 +67,19 @@ module.exports = ClusterHat = function () {
     };
 
     var off = this.off = function (pi) {
-        gpio_write(gpio_pin_led, gpio.HIGH);
+        gpio_write(gpio_pin_led, 1);
         switch (pi) {
             case p1:
-                gpio_write(gpio_pin_p1, gpio.LOW);
+                gpio_write(gpio_pin_p1, 0);
                 break;
             case p2:
-                gpio_write(gpio_pin_p2, gpio.LOW);
+                gpio_write(gpio_pin_p2, 0);
                 break;
             case p3:
-                gpio_write(gpio_pin_p3, gpio.LOW);
+                gpio_write(gpio_pin_p3, 0);
                 break;
             case p4:
-                gpio_write(gpio_pin_p4, gpio.LOW);
+                gpio_write(gpio_pin_p4, 0);
                 break;
             case all:
                 off(p1);
